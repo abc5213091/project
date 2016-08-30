@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>活动管理——官方活动</title>
+</head>
+
+<body>
+<div class="m30" role="Box">  
+    <section>
+        <header class="panel-heading">                  
+            <i class="icon-home fa-css3"></i> <a href="javascript:void(0)" actionAjax="officialActivity" class="c-g">  官方活动</a> > <span>活动详情</span>
+        </header>
+    </section>
+        <div class="panel-body">          
+			<form id="ActivitieForm">
+				<div class="pl180 cr-0">
+                                        <div class="disib wauto mt15">
+                                                <label class="disib f14 h20 pl5 tl">类型：</label>                       
+                                                <select field="type" name="status" class="input-sm form-control input-s-sm inline v-middle disib ml30">
+                                                    <option value="1">非web形式</option>
+                                                    <option value="2">web形式</option>
+                                               </select>      
+                                        </div>
+					<div class="disib wauto mt15">
+						<label class="disib f14 h20 pl5 tl">活动标题：</label>						
+						<input field="title" name="value" type="text" class="input-sm form-control w230 disib"  placeholder="请输入活动标题">
+					</div>
+					<div class="disib wauto mt15">
+						<label class="disib f14 h20 pl5 tl">活动时间：</label>						
+                                                <input field="start" name="date_before" type="text" role="date" class="input-sm form-control w170 disib"> ~ <input field="end" name="date_after" type="text" role="date" class="input-sm form-control w170 disib">
+					</div>
+                                        <div class="disib wauto mt15">
+						<label class="disib f14 h20 pl5 tl">参与规则：</label>
+                                                <select field="rule" name="status" class="input-sm form-control input-s-sm inline v-middle disib">
+                                                    <option value="0"></option>
+                                                    <option value="1">完成订单</option>
+                                                    <option value="2">连续完成订单</option>
+                                               </select> 
+                                                完成 <input field="num_1" name="value" type="text" class="input-sm form-control w230 disib" placeholder="请输入数字"> 次订单
+					</div>
+                                        <div class="disib wauto mt15">
+						<label class="disib f14 h20 pl5 tl">活动人数：</label>
+                                                <select field="limits" name="status" class="input-sm form-control input-s-sm inline v-middle disib">
+                                                    <option value="0"></option>
+                                                    <option value="1">限制人数</option>
+                                                    <option value="2">不限人数</option>
+                                               </select> 
+                                                限制 <input field="num_2" name="value" type="text" class="input-sm form-control w230 disib" placeholder="请输入数字"> 人
+					</div>
+                                        <div class="disib wauto mt15">
+						<label class="disib f14 h20 pl5 tl">活动地区：</label>
+                                                <!--以下是省市联动代码块-->                                               
+                                                 <select id="province" name="province"  class="input-sm form-control input-s-sm inline v-middle disib"></select>
+                                                 <select id="city" name="city" class="input-sm form-control input-s-sm inline v-middle disib"></select>
+                                                <a id="selector" href="#" class="btn btn-s-md btn-danger btn-rounded vb"><i class=" icon-plus fa-css3"></i> 添加地区</a>  
+                                                <div field="active_area" class="disib ml20"></div>
+                                        </div>
+                                        <div class="disib wauto mt15">
+						<label class="disib f14 h20 pl5 tl vb">活动图片：</label>      
+                                                <img field="active_image" src="./images/hd1.png" id="pic" class="tc bg_e6e6e6 b-d5d5d5 tc xd" style="width:150px; height:100px;" />
+                                                 <a id="selector" href="#" class="upload_img btn btn-s-md btn-primary btn-rounded vb"><i class="icon-hourglass fa-css3"></i> 点击上传图片</a>  
+                                        </div>	
+                                        <div class="disib wauto mt15">
+                                                <label class="disib f14 h20 pl5 tl vb">活动内容：</label>
+                                                <textarea field="content" name="contentActive" placeholder="长度不超过500位" maxlength="500" class="mt5 fn p10 tl cr-8 b-d5d5d5  inp_focus validate_val" style="width:638px; height:100px; min-height:100px;"></textarea>					
+                                        </div>
+                                        <div class="disib wauto mt20">
+                                               <a role="save" href="#" class="btn btn-s-md btn-success ml80"><i class="icon-check fa-css3"></i> 发布</a>      
+                                               <a role="cancel" href="#" class="btn btn-s-md btn-default ml25"><i class="icon-ban fa-css3"></i> 取消</a>
+                                        </div>
+                                </div>                           
+			</form>
+            </div>
+</div>
+</body>
+</html>

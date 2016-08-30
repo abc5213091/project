@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>约战管理--动态/约战运行</title>
+</head>
+<body>
+<div class="m30"  role="Box">
+    <section>
+        <header class="panel-heading">
+            <i class="icon-home fa-css3"></i> 约战管理   > 动态/约战运行
+        </header>
+        <div class="fl mr20 panel panel-info w530">
+            <div class="panel-heading f16 fb">约战</div>
+            <div class="panel-body" data-other="match">
+                <p class="f14 mb10">约战宣言 <span class="f12">（最多填写200个字）</span></p>
+                <div contenteditable="true" class="p10 h130 b-d5d5d5" data-module="matchNote"></div>
+                <div class="mt10 mb10">
+                    <span class="f14">插入图片：</span>
+                    <a class="btn btn-default uploatPic" id="upLoadImg" href="javascript:;" style="position: relative; z-index: 1;">
+                        <i class="fa fa-cloud-upload text"></i>
+                        <span class="text">上传图片</span>
+                    </a>
+                </div>
+                <div data-error="HintImg" class="cr_R p5"></div>
+
+                <ul class="mb10 hid pt10" data-module="match"></ul>
+
+                <ul class="f14">
+                    <li class="mb10">
+                        <span>游戏类型：</span>
+                        <select name="line" class="w100 p5 mr10">
+                            <option value="0">线下</option>
+                            <option value="1">线上</option>
+                        </select>
+                        <select name="gameName" class="w100 p5 mr10">
+                            <option value="0">游戏名</option>
+                        </select>
+                        <select name="server" class="w100 p5 mr10">
+                            <option value="0">服务器</option>
+                        </select>
+                    </li>
+                    <li class="mb10" data-area="online">
+                        <span>场地：</span>
+                        <input type="text" data-module="barName" class="input-sm form-control w60b disib"/>
+                    </li>
+                    <li class="mb10"data-area="online">
+                        <span>位置：</span>
+                        <input type="text" data-module="bar" class="input-sm form-control w60b disib"/>
+                    </li>
+                    <li class="mb10">
+                        <span>需求人数：</span>
+                        <input type="text" data-valid="int" maxlength="3" data-module="acceptNums" class="input-sm form-control w100 disib mr10"/>人
+                    </li>
+                    <li class="mb10">
+                        <span>开始时间：</span>
+                        <input type="text" role="date" name="day" class="input-sm form-control w150 disib" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})"/>
+                    </li>
+                    <li class="mb10">
+                        <span>约战类型：</span>
+                        <select name="matchType" id="" class="w150 p5 input-sm form-control disib">
+                            <option value="0">请选择</option>
+                            <option value="1">单挑</option>
+                            <option value="2">开黑</option>
+                            <option value="3">对战</option>
+                        </select>
+                    </li>
+                    <li class="mb10">
+                        <span>约战条件：</span>
+                        <textarea type="text" data-module="matchCondition" placeholder="不超过200个字" class="input-sm form-control w60b disib vt"></textarea>
+                    </li>
+                    <li class="mb10">
+                        <span>是否置顶：</span>
+                        <label class="switch" style="vertical-align: middle">
+                            <input type="checkbox" name="status">
+                            <span></span>
+                        </label>
+                    </li>
+                </ul>
+                <div class="tr"><button class="btn btn-info" data-btn="match">发布约战</button></div>
+                <div data-error="hint" class="cr_R p5"></div>
+            </div>
+            <div class="panel-footer p20">
+                <i class="glyphicon glyphicon-arrow-right f22 vb ml20"></i>
+                <a href="javascript:;" actionajax="matchHistory" class="f16 cr-108ea9">约战历史记录</a>
+            </div>
+        </div>
+        <div class="fl panel panel-info w530">
+            <div class="panel-heading f16 fb">动态</div>
+            <div class="panel-body"  data-other="dynamic">
+                <p class="f14 mb10">战神动态 <span class="f12">（最多填写200个字）</span></p>
+                <div contenteditable="true" data-module="content" class="p10 h130 b-d5d5d5"></div>
+                <div class="mt10 mb10">
+                    <span class="f14">插入图片：</span>
+                    <a class="btn btn-default uploatPic" id="upLoadDynamicImg" href="javascript:;" style="position: relative; z-index: 1;">
+                        <i class="fa fa-cloud-upload text"></i>
+                        <span class="text">上传图片</span>
+                    </a>
+                </div>
+                <div data-error="dHintImg" class="cr_R p5"></div>
+
+                <ul class="mb10 hid pt10" data-module="dynamic"></ul>
+
+                <div>
+                    <span class="f14">是否置顶：</span>
+                    <label class="switch" style="vertical-align: middle">
+                        <input type="checkbox" name="status">
+                        <span></span>
+                    </label>
+                </div>
+                <div class="tr"><button class="btn btn-info" data-btn="dynamic">发布动态</button></div>
+                <div data-error="dHint" class="cr_R p5"></div>
+            </div>
+            <div class="panel-footer p20">
+                <i class="glyphicon glyphicon-arrow-right f22 vb ml20"></i>
+                <a href="javascript:;" actionajax="dynamicHistory" class="f16 cr-108ea9">动态历史记录</a>
+            </div>
+        </div>
+    </section>
+    <div class="pager_container m-page"></div>
+</div>
+</body>
+</html>

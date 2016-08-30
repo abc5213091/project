@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>圈子管理——精选圈子</title>
+</head>
+
+<body>
+<div class="m30"  role="Box" data-card="choiceness">
+    <!-- 搜索条件 -->
+    <section >
+        <header class="panel-heading">                  
+           <i class="icon-home fa-css3"></i> 圈子管理 > 精选圈子
+        </header>
+      </section>   
+      <div class="mt20 mb30" data-box="status">
+        	<label class="lh31 vt">开启状态：</label>
+    		<label class="switch">
+	             <input type="checkbox" data-btn="status" fields="sts">
+	             <span></span>
+	        </label>
+	        <input type="hidden" name="status" value="2" data-status="one">
+        </div>
+      
+        <table width="100%" class="tb-default tb_h_48 text_u"  role="table">                          
+            <thead>
+                    <th width="10%">位置</th>
+                    <th width="10%">圈子ID</th> 
+                    <th width="20%">圈子名称</th> 
+                    <th width="10%">话题数量</th>
+                    <th width="20%">创建时间</th>
+                    <th width="30%" >操作</th>
+              </thead> 
+              <tbody data-list="choiceness"></tbody>
+        </table>
+        
+        <div class="mt20">
+       		<span class="btn btn-default btn-s-md" data-btn="save">保存</span>
+        </div>
+        <div class="mt20" >
+        	<label>首页展示的圈子：</label>
+        	<div class="disib" data-show="index"></div>
+        </div>
+</div>
+</body>
+</html>
