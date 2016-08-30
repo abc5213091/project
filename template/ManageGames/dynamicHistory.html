@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>约战管理--动态发布记录</title>
+</head>
+<body>
+<div class="m30"  role="Box">
+    <!-- 搜索条件 -->
+    <section>
+        <header class="panel-heading">
+            <i class="icon-home fa-css3"></i> 约战管理   > 动态发布记录
+        </header>
+        <div class="panel-body">
+            <form class="form-inline" role="form">
+                <div class="form-group">
+                    <label>发布时间： </label>
+                    <input name="date_before" type="text" role="date" class="input-sm form-control">
+                </div>
+                <div class="form-group">
+                    <label>至 </label>
+                    <input name="date_after" type="text" role="date" class="input-sm form-control">
+                </div>
+                <div class="form-group">
+                    <label>置顶： </label>
+                    <select name="istop"  class="input-sm form-control input-s-sm inline v-middle">
+                        <option value="">全部</option>
+                        <option value="0">未置顶</option>
+                        <option value="1">已置顶</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>平台： </label>
+                    <select name="status"  class="input-sm form-control input-s-sm inline v-middle">
+                        <option value="">全部</option>
+                        <option value="1">未下线</option>
+                        <option value="2">已下线</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>战神动态： </label>
+                    <input type="text" class="input-sm form-control"  placeholder="" name="value">
+                    <a href="#" class="btn btn-s-md btn-dark"  role="search"><i class="icon-magnifier fa-css3" role="search"></i> 筛选</a>
+                </div>
+                <a href="#" class="btn btn-s-md btn-info fr"  role="excel"><i class="icon-share-alt fa-css3" role="excel"></i> 导出</a>
+            </form>
+        </div>
+    </section>
+    <table width="100%" class="tb-default tb_h_48 text_u"  role="table">
+        <tr>
+            <th width="10%">ID</th>
+            <th width="20%">发布时间</th>
+            <th width="50%">战神动态</th>
+            <th width="20%">操作</th>
+        </tr>
+    </table>
+    <div class="pager_container m-page"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+	</head>
+
+	<body>
+		<!----  *************************************************** 网吧活动模块 *****************************************************----->
+		<!---- 1. 发布活动/编辑活动 ----->
+		<div id='wbhd_fbhd'>
+			<form id="ActivitieForm">
+				<div class="fl vt pl20 cr-0">
+					<div class="disib wauto">
+						<label class="disib f14 h20 fb cr_O pl5 tl">类型：</label>
+						<select name="status" class="input-sm form-control input-s-sm inline v-middle disib">
+							<option value="1">非web形式</option>
+							<option value="2">web形式</option>
+						</select>
+					</div>
+					<div class="disib wauto">
+						<label class="disib f14 h20 fb cr_O pl5 tl">活动标题：</label>
+						<input id="Title" name="Title" iptfield="title" class="pop-inp-txt-big ml5 inp_focus validate_val cr-8" placeholder="长度不超过25位" maxlength="25" value="" type="text" style="width:280px; height: 18px; line-height: 18px;" />
+					</div>
+					<div class="disib wauto">
+						<label class="disib f14 h20 fb cr_O pl5 tl">活动时间：</label>
+						<input id="d52211" name="d52211" iptfield="start" onFocus="var d52221 = $dp.$('d52221');WdatePicker({onpicked:function(){d52221.focus();},minDate:'%y-%M-%d'})" type="text" value="" class="Wdate disib inp_focus pl5" style="width:130px;" /> ~
+						<input id="d52221" name="d52221" iptfield="end" onFocus="WdatePicker({minDate:'#F{$dp.$D(\'d52211\')}'})" class="Wdate disib inp_focus pl5" type="text" style="width:130px;" value="" />
+
+					</div>
+					<div class="disib wauto">
+						<label class="disib f14 h20 fb cr_O pl5 tl">参与规则：</label>
+						<select name="status" class="input-sm form-control input-s-sm inline v-middle disib">
+							<option value="0"></option>
+							<option value="1">完成订单</option>
+							<option value="2">连续完成订单</option>
+						</select>
+						完成
+						<input iptfield="title" class="pop-inp-txt-big ml5 inp_focus validate_val cr-8" value="" type="text" style="width:280px; height: 18px; line-height: 18px;" />次订单
+					</div>
+					<div class="disib wauto">
+						<label class="disib f14 h20 fb cr_O pl5 tl">活动人数：</label>
+						<select name="status" class="input-sm form-control input-s-sm inline v-middle disib">
+							<option value="0"></option>
+							<option value="1">限制人数</option>
+							<option value="2">不限人数</option>
+						</select>
+						限制
+						<input iptfield="title" class="pop-inp-txt-big ml5 inp_focus validate_val cr-8" value="" type="text" style="width:280px; height: 18px; line-height: 18px;" />人
+					</div>
+					<div class="disib wauto">
+						<label class="disib f14 h20 fb cr_O pl5 tl">活动地区：</label>
+						<!--以下是省市联动代码块-->
+						<select id="province" name="province" class="inp_focus b-d5d5d5 yj2 w100  h28 lh28" style="width:100px;"></select>
+						<select id="city" name="city" class="inp_focus b-d5d5d5  yj2 w100  h28 lh28" style="width:100px;"></select>
+						<select id="county" name="county" class="inp_focus b-d5d5d5  yj2 w100 h28 lh28" style="width:100px;"></select>
+					</div>
+					<div class="disib wauto">
+						<label class="disib f14 h20 fb cr_O pl5 tl">活动图片：</label>
+						<!--以下是省市联动代码块-->
+						<select id="province" name="province" class="inp_focus b-d5d5d5 yj2 w100  h28 lh28" style="width:100px;"></select>
+						<select id="city" name="city" class="inp_focus b-d5d5d5  yj2 w100  h28 lh28" style="width:100px;"></select>
+						<select id="county" name="county" class="inp_focus b-d5d5d5  yj2 w100 h28 lh28" style="width:100px;"></select>
+					</div>
+				</div>
+
+				<div class="fl wauto f14 fb mt20 cr_O h20 lh20">活动内容：</div>
+				<div class="fl wauto">
+					<textarea placeholder="长度不超过500位" maxlength="500" id="contentActive" name="contentActive" iptfield="content" class="mt5 fn p10 tl cr-8 b-d5d5d5  inp_focus validate_val" style="width:638px; height:100px; min-height:100px;"></textarea>
+					<br/>
+					<br>
+					<p class="fn narbar-tip" style="font-size:12px;"></p>
+				</div>
+			</form>
+		</div>
+
+		<!----  *************************************************** 通知中心模块  *****************************************************----->
+
+		<!---- 2. 活动详情 ----->
+		<div id='tzzx_hdxq'>
+			<div class="fl tl" style="width:280px; height:150px; visibility: bottom;">
+				<img id="pic" src="" title="活动图片" style="width:280px; height:150px">
+			</div>
+
+			<div class="fl vt pl20 cr-0 mt30" style="width:260px;">
+				<p class="disib h24 lh24">
+					<label class="disib fb cr_O vt" style="font-size:13px;">活动标题：</label>
+					<span id="Address" field="title" class="disib t_hh" style="width:180px; line-height:16px; padding:0px 0 3px 0;display: inline;">                                            
+                                        </span>
+				</p>
+				<div class="c1"></div>
+				<p class="disib h24 lh24">
+					<label class="disib2 fb cr_O" style="font-size:13px;">发布日期：</label>
+					<span id="Tel" class="disib" field="start"></span>
+				</p>
+				<div class="c1"></div>
+				<p class="disib h24 lh24">
+					<label class="disib2 fb cr_O" style="font-size:13px;">活动时间：</label>
+					<span id="Tel" class="disib" field="start"></span>至
+					<span id="Tel" class="disib" field="end"></span>
+				</p>
+				<div class="c1"></div>
+				<p class="disib h24 lh24">
+					<label class="disib2 fb cr_O" style="font-size:13px;">参加人数：</label>
+					<span id="Tel" class="disib" field="joins"></span>
+				</p>
+				<div class="c1"></div>
+				<p class="disib h24 lh24">
+					<label class="disib2 tr fb cr_O" style="font-size:13px;">活动状态：</label>
+					<span id="Tel" class="disib" field="status"></span>
+				</p>
+				<div class="c1"></div>
+			</div>
+
+			<div class="fl wauto f14 fb mt20 cr_O">活动内容：</div>
+			<div id="CustormetMes" class="fl mt10 mb5 pb10 b-f2bc00 wauto  bg_ffffdf">
+				<p class="fl p10 cr-0 f-nromal lh24 t_hh" field="content"> 活动内容 </p>
+			</div>
+
+		</div>
+		<!----  *************************************************** 网吧信息模块  *****************************************************----->
+		<!---- 1. 查看图片 ----->
+		<div id='wbxx_cktp'>
+			<div style="width:1258px; height: 1300px;">
+				<img width="1258" height="1300" src="" title="" />
+			</div>
+		</div>
+
+		<!----  *************************************************** 上传截图模块  *****************************************************----->
+		<div id="cropper">
+			<form id='cropperForm' method="post" enctype="multipart/form-data" style="display: none;">
+				<input class="avatar-file" name="avatar_file" type="file" accept="image/jpeg,image/png" />
+				<input class="avatar-src" name="avatar_src" type="hidden">
+				<input class="avatar-data" name="avatar_data" type="hidden">
+				<input class="token" name="token" type="hidden">
+				<input name="p" value="cybercafe" type="hidden">
+				<input name="ac" value="cybercafe" type="hidden">
+				<input name="operate" value="cutPic" type="hidden">
+			</form>
+
+			<div class="row eg-main">
+				<div class="span5">
+					<div class="eg-wrapper">
+						<img class="cropperPic" id="cropperPic" src="">
+					</div>
+					<!-- <a href="javascript:;" class="select-pic disib mt15" style="color:#777;"><i class="disib ie6png jh mr5 tm50">&nbsp;</i>选择图片</a>-->
+					<span style='color: #f00;' class="cropper-msg"></span>
+				</div>
+				<div class="span2">
+					<div class="eg-preview clearfix" style="width:160px;">
+						<!--						<div class="preview preview-lg"></div>-->
+						<div class="disib preview  preview-md"> </div>
+						<div class="disib text tc pl50 pt10 fb f14 cr-7 ml20">预览</div>
+						<!--						<div class="preview preview-sm"></div>
+						<div class="preview preview-xs"></div>-->
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!----  *************************************************** 账号管理模块 *****************************************************----->
+		<div id='zhgl_yhzh_ckxq'>
+			<!---- 账号管理 -> 用户账号 -> 查看详情  ---->
+			<div class="cr_O fb f14 disib wauto f-st">
+				<div class="text-center m-b m-t">
+					<a href="#" class="thumb-lg">
+						<img isrc="" class="img-circle" role="qnImg" field="head_image_url" style="width: 50px;height: 50px;" />
+					</a>
+				</div>
+				<div>
+					<small class="text-uc text-xs text-muted mb10 mt10 disb">个人信息</small>
+					<div>
+						<div class="wauto pt10">
+							<label class="text-muted f12">昵称：</label><font field="nickname"></font></div>
+						<div class="wauto pt10">
+							<label class="text-muted f12">性别：</label><font field="sex"></font></div>
+						<div class="wauto pt10">
+							<label class="text-muted f12">年龄：</label><font field="age"></font></div>
+						<div class="wauto pt10">
+							<label class="text-muted f12">身份证号：</label><font field="idCard"></font></div>
+						<!--<div class="wauto pt10"><label class="text-muted f12">用户账号：</label><font field="idCard"></font></div>-->
+					</div>
+					<small class="text-uc text-xs text-muted mb10 mt20 disb">标签</small>
+					<div field="tag" class="p10">
+					</div>
+					<small class="text-uc text-xs text-muted mb10 mt20 disb">积分信息</small>
+					<div>
+						<div class="wauto pt10">
+							<label class="text-muted f12">总积分：</label><font field="totalGoal"></font></div>
+						<div class="wauto pt10">
+							<label class="text-muted f12">已使用积分：</label><font field="usedGoal"></font></div>
+					</div>
+					<small class="text-uc text-xs text-muted mb10 mt20 disb">约战详情</small>
+					<div>
+						<div class="wauto pt10">
+							<label class="text-muted f12">约战次数：</label><font field="invites"></font></div>
+						<div class="wauto pt10">
+							<label class="text-muted f12">应战次数：</label><font field="accepts"></font></div>
+					</div>
+					<small class="text-uc text-xs text-muted mb10 mt20 disb">已加入 的圈子</small>
+					<div>
+						<div class="wauto pt10">
+							<font field="ci_names"></font></div>
+						<div class="wauto pt10">
+							<label class="text-muted f12">发表话题：</label><font field="topicnum"></font></div>
+						<div class="wauto pt10">
+							<label class="text-muted f12">评论话题：</label><font field="commentnum"></font></div>
+						<div class="wauto pt10">
+							<label class="text-muted f12">回复评论：</label><font field="replynum"></font></div>
+					</div>
+				</div>
+				<!--
+				<div class="fl wauto"><img width="200" height="150" src="" field="head_image_url" /></div>
+				<div class="fl wauto pt10">身份证号：<font field="idCard"></font></div>
+				
+				<div class="fl wauto pt10">昵称：<font field="nickname"></font>
+				</div>
+				<div class="fl wauto pt10">性别：<font field="sex"></font>
+				</div>
+				<div class="fl wauto pt10">总积分：<font field="totalGoal"></font>
+				</div>
+				<div class="fl wauto pt10">已使用积分：<font field="usedGoal"></font>
+				</div>-->
+
+			</div>
+		</div>
+
+		<!----  *************************************************** 网吧信息 *****************************************************----->
+		<!--  ##账号信息  -->
+		<div id="Bar-wbxx">
+
+			<section class="panel-default" style="color: #000">
+				<header class="text-info"><b class="f20 f-yh">账号信息</b></header>
+				<div class="post-item">
+					<div class="caption wrapper-lg">
+						<div id="AccountInfo">
+							<div class="panel_con bg_fff xd">
+								<ul class="disib" style="max-width:1000px;">
+									<li class="fl wauto h36 lh36">
+										<label class="disib vt fn">用户名：</label>
+										<span class="disib fn cr-6" field="bindName"></span>
+									</li>
+									<li class="fr wauto h36 lh36">
+										<label class="disib vt">绑定手机号：</label>
+										<span id="Tel" class="disib vt cr-6" field="username"></span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- 基本信息 -->
+			<section class="panel-default mt20" style="color: #000">
+				<header class="text-info mb10 oh">
+					<b class="f20 f-yh"> 基本信息</b>
+					<form class="form-inline fr disn" data-type="basic">
+						<div class="form-group u-tip"></div>
+						<div class="form-group">
+							<span class="btn btn-sm btn-success j-btn" role="yes">审核通过</span>
+							<span class="btn btn-sm btn-danger j-btn" role="no">审核不通过</span>
+						</div>
+						<div class="form-group disn" role="noPass" style="display: none;">
+							<input type="text" class="form-control input-sm" name="remark">
+							<span class="btn btn-sm btn-dark j-btn" role="sure">确定</span>
+							<span class="btn btn-sm btn-dark j-btn" role="close">取消</span>
+						</div>
+					</form>
+				</header>
+				<div class="post-item">
+					<div class="caption wrapper-lg">
+						<div id="BarInfo">
+							<div class="panel_con xd">
+								<div class="disib vt pr15 w160 h130 fl"><img srcfield="logo" class="logo_img p3 b_e3e2e2 mr15" id="BarLogo" style="width:160px; height:130px;" src="" title="网吧Logo" /></div>
+
+								<div class="disib pb10 ov" style="width: 650px;">
+									<ul style="">
+										<li class="fl w60b h36 lh36">
+											<label class="disib vt fn">网吧名称：</label>
+											<span class="disib fn cr-6" field="cybercafe_name"></span>
+										</li>
+										<!--<li class="fl w40b h36 lh36">
+											<label class="disib vt">机器数量：</label>
+											<span id="Tel" class="disib vt cr-6" field="computers"></span>
+										</li>-->
+										<li class="fl wauto h36 lh36">
+											<label class="disib vt fn">网吧地址：</label>
+											<span class="disib fn cr-6" field="cybercafe_address"></span>
+										</li>
+										<li class="fl w60b h36 lh36">
+											<label class="disib vt">网吧电话：</label>
+											<span id="Tel" class="disib vt cr-6" field="tel"></span>
+										</li>
+										<li class="fl w60b h36 lh36">
+											<label class="disib vt">业主姓名：</label>
+											<span id="Tel" class="disib vt cr-6" field="ownerName"></span>
+										</li>
+										<li class="fl w40b h36 lh36">
+											<label class="disib vt">业主电话：</label>
+											<span id="Tel" class="disib vt cr-6" field="ownerTel"></span>
+										</li>
+										<li class="fl wauto lh36">
+											<label class="disib vt fn">网吧标签：</label>
+											<span class="disib fn cr-6" field="tag"></span>
+										</li>
+										
+										<li class="fl lh36">
+											<label class="disib vt">价格区间：</label>
+											<!--<span class="disib vt cr-6" field="min_price"></span> - <span class="disib vt cr-6" field="max_price"></span>元/小时</span>-->
+											<div  field="priceDetail" class="disib"></div>
+										</li>
+										
+										
+									</ul>
+								</div>
+								<!--  ##网吧审核提示：   ytg  已审核    -->
+								<div class="jd ytg mr25 mt25 r0 t0 baseYTG" style="display: none;"> &nbsp;</div>
+							</div>
+
+							<!-- 机器配置 -->
+							<div class="bg_fff pl12 pr12">
+								<div class="h40 lh40 hr">
+									<b class="h40 lh40 f14 pr6"> 机器配置</b>
+								</div>
+							</div>
+							<div class="panel_con">
+
+								<div class="wauto pt25">
+									<dl class="h40" style="max-width:1400px;margin-bottom:0;">
+										<!--<dt class="fl w40b">
+		                                    <label class="disib vt fn">品牌：</label>
+		                                    <span class="disib lh20 fn cr-6" field="brand"> </span>
+		                                </dt>-->
+										<dd class="fl w40b">
+											<label class="disib vt">主板&CPU：</label>
+											<span id="Tel" class="disib vt cr-6" field="CPU"></span>
+										</dd>
+									</dl>
+									
+									<dl class="h40" style="max-width:1400px;margin-bottom:0;">
+										<!--<dt class="fl w40b">
+		                                     <label class="disib vt fn">内存：</label>
+		                                     <span class="disib vt fn cr-6" field="memory"></span>
+		                                </dt>-->
+										<dd class="fl w40b">
+											<label class="disib vt">显卡：</label>
+											<span class="disib vt cr-6" field="graphics"></span>
+										</dd>
+									</dl>
+
+									<dl class="h40" style="max-width:1400px;margin-bottom:0;">
+										<!--<dt class="fl w40b">
+		                                     <label class="disib vt fn">内存：</label>
+		                                     <span class="disib vt fn cr-6" field="memory"></span>
+		                                </dt>-->
+										<dd class="fl w40b">
+											<label class="disib vt">显示器：</label>
+											<span class="disib vt cr-6" field="displayer"></span>
+										</dd>
+									</dl>
+									<dl class="h40" style="max-width:1400px;margin-bottom:0;">
+										<dt class="fl w40b">
+		                                    <label class="disib vt fn">外设：</label>
+		                                    <span id="Total" class="disib fn cr-6" field="keyboard_mouse"></span>                                               
+		                                </dt>
+										<!--<dd class="fl w40b">
+											<label class="disib vt fn">系统：</label>
+											<span id="Total" class="disib fn cr-6" field="system"></span>
+										</dd>-->
+									</dl>
+								</div>
+							</div>
+
+							<!-- 网吧图片 -->
+							<div class="bg_fff pl12 pr12">
+								<div class="h40 lh40 hr">
+									<b class="h40 lh40 f14  bg_fff pr6"> 网吧图片</b>
+								</div>
+							</div>
+							<div class="panel_con bg_fff" style="padding: 15px 18px 23px 12px;font-size: 13px;">
+
+								<!-- 网吧图片列表 -->
+								<div id="ImgList" class="disib ImgList" role="barImg"> </div>
+
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+			</section>
+
+			<!--  ##财务信息  -->
+			<section class="panel-default" style="color: #000">
+				<header class="text-info mb10 oh">
+					<b class="f20 f-yh"> 财务信息</b>
+					<form class="form-inline fr disn" data-type="bank">
+						<div class="form-group u-tip"></div>
+						<div class="form-group">
+							<span class="btn btn-sm btn-success j-btn" role="yes">审核通过</span>
+							<span class="btn btn-sm btn-danger j-btn" role="no">审核不通过</span>
+						</div>
+						<div class="form-group disn" role="noPass" style="display: none;">
+							<input type="text" class="form-control input-sm" name="remark">
+							<span class="btn btn-sm btn-dark j-btn" role="sure">确定</span>
+							<span class="btn btn-sm btn-dark j-btn" role="close">取消</span>
+						</div>
+					</form>
+				</header>
+				<div class="post-item">
+					<div class="caption wrapper-lg">
+						<div id="MoneyInfo">
+							<div class="panel_con bg_fff xd">
+								<ul class="disib" style="max-width:1000px;">
+									<li class="fl wauto h36 lh36">
+										<label class="disib vt fn">银行名称：</label>
+										<span class="disib fn cr-6" field="bankName"></span>
+									</li>
+									<li class="fr wauto h36 lh36">
+										<label class="disib vt">开户支行：</label>
+										<span id="Tel" class="disib vt cr-6" field="bankOfDeposit"></span>
+									</li>
+									<li class="fl wauto h36 lh36">
+										<label class="disib vt fn">户名：</label>
+										<span id="Total" class="disib w70b fn cr-6" field="bankOwner"></span>
+									</li>
+									<li class="fr wauto h36 lh36">
+										<label class="disib vt">银行卡号：</label>
+										<span class="disib vt cr-6" field="bankCardNumber"></span>
+									</li>
+								</ul>
+								<!--  ##网吧审核提示：   cw_ytg  财务已通过审核    -->
+								<div class="jd cw_ytg mr25 mt25 r0 t0 moneyYTG" style="display: none;"> &nbsp;</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!--  ##证件信息  -->
+			<section class="panel-default" style="color: #000">
+				<header class="text-info mb10 oh">
+					<b class="f20 f-yh"> 网吧证件</b>
+					<form class="form-inline fr disn" data-type="license">
+						<div class="form-group u-tip"></div>
+						<div class="form-group">
+							<span class="btn btn-sm btn-success j-btn" role="yes">审核通过</span>
+							<span class="btn btn-sm btn-danger j-btn" role="no">审核不通过</span>
+						</div>
+						<div class="form-group disn" role="noPass" style="display: none;">
+							<input type="text" class="form-control input-sm" name="remark">
+							<span class="btn btn-sm btn-dark j-btn" role="sure">确定</span>
+							<span class="btn btn-sm btn-dark j-btn" role="close">取消</span>
+						</div>
+					</form>
+				</header>
+				<div class="post-item">
+					<div class="caption wrapper-lg">
+						<div id="CardInfo">
+							<div class="panel_con bg_fff xd" style="padding: 20px 18px 15px 12px;font-size: 13px;">
+
+								<ul id="CardList" class="disib ImgList">
+									<li class="fl w250">
+										<div class="fl p3 b-cfcfcf mr15 disi" style="width:240px;">
+											<img srcfield="businessLicense" class="charter_img" style="width:240px; height:140px" src="" title="经营执照" />
+										</div>
+										<a class="fl mt5 cr-8 showBigPic jyzz_pic" href="javascript:;" data-toggle="modal" data-title="经营执照" data-src="" style="display: none;"><i class="fa icon-magnifier-add"></i>查看大图</a>
+									</li>
+
+									<li class="fl w250">
+										<div class="fl p3 b-cfcfcf mr15 disi" style="width:240px;">
+											<img srcfield="whLicense" class="license_img" style="width:240px; height:140px" src="" title="网络文化经营许可证" />
+										</div>
+										<a class="fl mt5 cr-8 showBigPic wlwh_pic" data-toggle="modal" data-title="网络文化经营许可证" data-src="" style="display: none;"><i class="fa icon-magnifier-add"></i>查看大图</a>
+									</li>
+								</ul>
+
+								<!--  ##网吧审核提示：   zj_ytg  证件已通过审核    -->
+								<div class="jd zj_ytg mr25 mt25 r0 t0 codeYTG" style="display: none;"> &nbsp;</div>
+							</div>
+						</div>
+						<!--  证件信息 ##  -->
+					</div>
+				</div>
+			</section>
+		</div>
+		
+
+	</body>
+
+</html>

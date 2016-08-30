@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>投诉反馈——约战举报</title>
+</head>
+
+<body>
+<div class="m30"  role="Box">  
+    <!-- 搜索条件 -->
+    <section>
+        <header class="panel-heading">                  
+        	<i class="icon-home fa-css3"></i> 投诉反馈 > 约战举报
+        </header>
+    </section>
+    <section class="panel panel-info">
+        <header class="panel-heading bg-light">
+          <ul class="nav nav-tabs nav-justified">
+            <li class="active"><a href="#playReport" data-toggle="tab" btn="report">约战举报</a></li>
+            <li><a href="#aresReport" data-toggle="tab" btn="dynamic">动态举报</a></li>
+          </ul>
+        </header>
+        <div class="panel-body">
+          <div class="tab-content">
+            <div class="tab-pane active" id="playReport">
+            	<div role="form">
+            		<form class="form-inline mb10" role="form">
+			            <div class="form-group">
+			                                    举报时间：<input id="BeginTime" type="text" role="date" class="input-sm form-control" name="date_before" >
+			            </div>
+			            <div class="form-group">
+			            	<label>至 </label>
+			                <input id="EndTime" type="text" role="date" class="input-sm form-control" name="date_after" >
+			            </div>
+			            <div class="form-group">
+			                <label>举报： </label>
+			                <select id="PayStatus" class="input-sm form-control input-s-sm inline v-middle" data-select="status" name="report_type">
+			                    <option value="">全部</option>
+			                    <option value="1">对话</option>
+			                    <option value="2">约战</option>
+			                </select>                      
+			            </div>
+			            <div class="form-group">
+			            	<select id="RefundType" class="input-sm form-control input-s-sm inline v-middle" data-select="name" name="key">
+				                <option value="username">举报人</option>
+				                <option value="mid">约战ID</option>
+				                <option value="report_note">举报内容</option>
+			              	</select>     
+			              	<input id="KeyWord" type="text" class="input-sm form-control" name="value"  placeholder="输入关键词" data-text="keywords">            
+			            </div>                       
+			            <a  id="SearchBtn" href="#" class="btn btn-s-md btn-info"  role="search" flag="1"><i class="icon-magnifier fa-css3"></i> 筛选</a>
+			            <a  id="ExcelBtn" href="#" class="btn btn-s-md btn-info"   role="excel" flag="1"><i class="icon-share-alt fa-css3"></i> 导出</a>
+			        </form>
+				</div>
+		        <table id="DepositList" width="100%" class="tb-default tb_h_48 text_u">                          
+		            <thead>
+		            	<tr> 
+				            <th width="14.2%">ID</th>                                    
+				            <th width="14.2%">举报时间</th>
+				            <th width="14.2%">举报人</th>
+				            <th width="14.2%">被举报约战ID</th>
+				            <th width="14.2%">举报类型</th>
+				            <th width="14.2%">举报内容</th>
+				            <th width="14.2%">被举报约战对话</th>
+			            </tr>
+		              </thead>
+		              <tbody data-body="list" data="playReport">
+		              </tbody>
+		        </table>
+				<div class="pager_container m-page" data-page="charge"></div>
+			</div>
+            <div class="tab-pane" id="aresReport">
+            	<div role="form">
+            		<form class="form-inline mb10" role="form">
+			            <div class="form-group">
+                      		举报时间：<input id="BeginTime" type="text" role="date" class="input-sm form-control" name="date_before" data-time="start">
+			            </div>
+			            <div class="form-group">
+			                <label>至 </label>
+			                <input id="EndTime" type="text" role="date" class="input-sm form-control" name="date_after" data-time="end">
+			            </div>
+			            <div class="form-group">
+			            	<select id="RefundType" class="input-sm form-control input-s-sm inline v-middle" data-select="name" name="key">
+				                <option value="username">举报人账号</option>
+				                <option value="dynamic_id">动态ID</option>
+			              	</select>     
+			              	<input id="KeyWord" type="text" class="input-sm form-control" name="value"  placeholder="输入关键词" data-text="keywords">            
+			            </div>                       
+			            <a  id="SearchBtn" href="#" class="btn btn-s-md btn-info"  role="search" flag="2"><i class="icon-magnifier fa-css3"></i> 筛选</a>
+			            <a  id="ExcelBtn" href="#" class="btn btn-s-md btn-info" role="excel"  flag="2"><i class="icon-share-alt fa-css3"></i> 导出</a>
+			        </form>
+				</div>
+		        <table id="DepositList" width="100%" class="tb-default tb_h_48 text_u">                          
+		            <thead>
+		            	<tr>
+				            <th width="16.6%">ID</th>                                    
+				            <th width="16.6%">举报时间</th>
+				            <th width="16.6%">举报人账号</th>
+				            <th width="16.6%">被举报动态ID</th>
+				            <th width="16.6%">举报类型</th>
+				            <th width="16.6%">举报内容</th>
+			            </tr>
+		            </thead>
+		            <tbody  data="aresList">
+		            </tbody>
+		        </table>
+				<div class="pager_container m-page" data-page="aresReport"></div>
+            </div>
+
+          </div>
+        </div>
+    </section>
+
+</div>
+</body>
+</html>
