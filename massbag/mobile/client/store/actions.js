@@ -14,9 +14,12 @@ export const addUser = ({commit}) => {
 }
 export const getUser = ({commit}) => {
     api.getUser().then(res => {
+        console.log(res)
         if (res.ok) {
-            console.log(res.data)
             commit('GET_USER_LIST', res.data)
+        }else{
+            console.log(222)
+            console.log(res)
         }
     }, res => {
         console.log(111)
