@@ -1,36 +1,30 @@
 <template>
     <div>
-        <div class="counter" @click="$store.dispatch('incrementAsync')">
-            {{ count }}
-        </div>
-        {{test}}
         <ul>
-            <li v-for="item in list" v-text="item.username"></li>
+            <li v-for="item in user">
+                <!--<span>{{$key}}</span>-->
+                <span>{{item.username}}</span>
+                <span>{{item.password}}</span>
+                <span>{{item.mobileNumber}}</span>
+            </li>
         </ul>
     </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   computed: {
-    count() {
-      return this.$store.state.count
-    },
-    list(){
-        return this.$store.state.user
-    },
-    test(){
-        return 123
-    }
+      ...mapGetters({
+          user: 'getUserList'
+      })
   },
 watch: {
     '$route'() {
-        this.test = '12345678'
-        console.log(123456)
+        this.$store.dispatch('getUser')
     }
 },
   mounted(){
-      console.log(222)
       this.$store.dispatch('getUser')
   }
 }
