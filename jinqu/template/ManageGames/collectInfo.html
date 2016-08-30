@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>约战管理——网吧信息采集</title>
+<style>
+	.alert-danger{display: none;}
+</style>
+</head>
+
+<body>
+<div class="m30" data-card="card">
+    <!-- 搜索条件 -->
+    <section data-content="bar">
+        <header class="panel-heading">                  
+           <i class="icon-home fa-css3"></i> 约战管理 > 网吧信息采集
+        </header>
+        <div class="panel-body" role="Box">
+            <div class="h4 mb20" style="color: #788188;">已采集<span class="text-info" data="barCollect"></span>条网吧数据，玩家自定义<a class="text-info" href="" data="userCollect"></a>条网吧数据</div>
+            <form class="form-inline" role="searchForm">
+	      		<div class="form-group">
+	            	<label>网吧名称：</label><input class="h36" type="text" name="barName" />
+	            	<label>网吧地址：</label><input class="h36" type="text" name="bar_location" />   
+	            </div>                       
+	            <a  id="SearchBtn" href="#" class="btn btn-s-md btn-info" data-btn="filter" role="search" flag="1"><i class="icon-magnifier fa-css3"></i> 筛选</a>
+	            <a  id="SearchBtn" href="#" class="btn btn-s-md btn-info" data-btn="addbar" ><i class="icon-magnifier fa-css3"></i> 添加网吧</a>
+            </form>                  
+        </div>
+        <table id="DepositList" width="100%" class="tb-default tb_h_48 text_u" >                          
+	        <thead>
+	        	<tr>
+		            <th width="35%">网吧名称</th>                                    
+		            <th width="35%">网吧地址</th>
+		            <th width="30%">操作</th>
+	            </tr>
+	        </thead>
+	        <tbody data-body="list">
+	        </tbody>
+	    </table>
+	    <div class="pager_container m-page" page="pages"></div>
+	    <div data-tip="msg" class="p10 tc f14"></div>
+    </section> 
+    <section data-content="palyer" style="display: none;">
+    	<ul class="breadcrumb bor0">
+	        <li><a data-btn="showSys"> 网吧信息采集</a></li>
+	        <li><a > 玩家网吧采集</a></li>
+        </ul>
+        <div class="panel panel-default">
+        	<div class="panel-body">
+        		<form class="form-inline mb20" role="searchForms">
+		      		<div class="form-group">
+		            	<label>网吧名称：</label><input class="h36" type="text" name="barName" />
+	            		<label>网吧地址：</label><input class="h36" type="text" name="bar_location" />      
+		            </div>                       
+		            <a  id="SearchBtn" href="#" class="btn btn-s-md btn-info" data-btn="filter" role="search" flag="2"><i class="icon-magnifier fa-css3"></i> 筛选</a>
+	            </form>
+	            <table id="DepositList" width="100%" class="tb-default tb_h_48 text_u">                          
+			        <thead>
+			        	<tr>
+				            <th width="35%">网吧名称</th>                                    
+				            <th width="35%">网吧地址</th>
+				            <th width="30%">操作</th>
+			            </tr>
+			        </thead>
+			        <tbody data-body="sList">
+			        </tbody>
+			    </table>
+			    <div class="pager_container m-page" page="spages"></div>
+        	</div>
+        </div>
+    </section>
+</div>
+</body>
+</html>

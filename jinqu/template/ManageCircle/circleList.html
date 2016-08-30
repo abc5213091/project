@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>圈子管理——圈子列表</title>
+</head>
+
+<body>
+<div class="m30"  role="Box" data-card="circle">
+    <!-- 搜索条件 -->
+    <section >
+        <header class="panel-heading">                  
+           <i class="icon-home fa-css3"></i> 圈子管理 > 圈子列表
+        </header>
+        <div class="panel-body">
+          <form class="form-inline" role="form">
+            <div class="form-group">
+              <label>创建时间： </label>
+              <input name="date_before" role="date" class="input-sm form-control"  type="text">
+            </div>
+            <div class="form-group">
+              <label>至 </label>
+               <input name="date_after" role="date" class="input-sm form-control" type="text">
+            </div>    
+           <div class="form-group">
+               <label>圈子状态： </label>
+                <select name="ci_status" class="input-sm form-control input-s-sm inline v-middle">
+                	<option value="">全部</option>
+                    <option value="1">已上线</option>
+                    <option value="0">待上线</option>
+                </select>                      
+            </div>
+               <div class="form-group">              
+                 <select name="key" class="input-sm form-control input-s-sm inline v-middle">
+                        <option value="id">圈子ID</option>
+                        <option value="name">圈子名称</option>
+                </select>  
+               <input name="value" type="text" class="input-sm form-control"  placeholder="输入关键词">
+            </div>                               
+            <a href="#" class="btn btn-s-md btn-dark"  role="search"><i class="icon-magnifier fa-css3" role="search"></i> 筛选</a>
+            <a href="#" class="btn btn-s-md btn-info"  role="excel"><i class="icon-share-alt fa-css3" role="excel"></i> 导出</a>
+            <a href="javascript:void(0)" class="btn btn-s-md btn-info mr10" data-btn="addCircle">新建圈子</a>
+            <a href="javascript:void(0)" class="btn btn-s-md btn-info" actionAjax="circleListChoicenessCircle">精选圈子</a>
+          </form>                  
+        </div>
+      </section>    
+        <table width="100%" class="tb-default tb_h_48 text_u"  role="table">                          
+            <tr>
+                    <th width="10%">圈子ID</th> 
+                    <th width="10%">圈子名称</th> 
+                    <th width="10%">话题数量</th>
+                    <th width="10%">人气值</th>  
+                    <th width="15%">图片广告(已投放)</th>
+                    <th width="15%">话题推荐(已投放)</th>
+                    <th width="10%">创建时间</th>
+                    <th width="10%">圈子状态</th>
+                    <th width="10%" >操作</th>
+              </tr>  
+        </table>
+       <div class="pager_container m-page"></div>
+</div>
+</body>
+</html>
