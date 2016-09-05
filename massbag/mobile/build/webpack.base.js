@@ -34,7 +34,8 @@ module.exports = {
         test: /\.js$/,
         loaders: ['babel'],
         exclude: [/node_modules/]
-      }
+      },
+      { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'}
     ]
   },
   browserlist: ['last 2 versions', 'ie > 8'],

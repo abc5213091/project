@@ -7,7 +7,7 @@ const config = require('./webpack.base')
 const pkg = require('../package')
 
 
-exec('rm -rf dist/')
+// exec('rm -rf dist/')
 config.devtool = 'source-map'
 config.entry.vendor = Object.keys(pkg.dependencies).filter(name => {
   // update the code if you want to

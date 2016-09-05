@@ -3,7 +3,11 @@
         <counter></counter>
         <p>
             To get started, edit files in <code>./client</code> and save.
+            <img src="images/tt.png">
+
         </p>
+
+        <div class="png"></div>
     </div>
 </template>
 
@@ -28,3 +32,7 @@ export default {
     }
 }
 </script>
+
+<style>
+    .png{ width:100px;height:100px; background:url(../images/tt.png);}
+</style>
