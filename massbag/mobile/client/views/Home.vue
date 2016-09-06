@@ -3,7 +3,7 @@
         <counter></counter>
         <p>
             To get started, edit files in <code>./client</code> and save.
-            <img src="images/tt.png">
+            <img src="../images/tt.png">
 
         </p>
 
