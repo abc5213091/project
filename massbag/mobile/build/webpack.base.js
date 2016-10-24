@@ -2,6 +2,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const postcss = [
   require('autoprefixer')(),
@@ -35,6 +36,10 @@ module.exports = {
         loaders: ['babel'],
         exclude: [/node_modules/]
       },
+      {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
+      },
       { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'}
     ]
   },
@@ -48,10 +53,13 @@ module.exports = {
   },
   postcss,
   vue: {
-    loaders: {},
+    loaders: {
+      //  css: ExtractTextPlugin.extract('vue-style-loader', 'style-loader', 'css-loader')
+    },
     postcss
   },
   plugins: [
+    new ExtractTextPlugin('style.css'),
     new HtmlWebpackPlugin({
       title: 'mobile',
       template: __dirname + '/index.html',
